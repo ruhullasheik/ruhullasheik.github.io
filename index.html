@@ -125,15 +125,19 @@
       animation: fadeUp 0.7s ease 0.2s forwards;
     }
     .hero-name {
+      position: absolute;
+      top: 80px;
+      left: 2.5rem;
       font-family: var(--display);
       font-weight: 800;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      line-height: 1.1;
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      line-height: 1.15;
       letter-spacing: -0.02em;
       color: var(--text);
-      margin-bottom: 1.75rem;
+      text-align: left;
+      z-index: 3;
       opacity: 0;
-      animation: fadeUp 0.7s ease 0.4s forwards;
+      animation: fadeUp 0.7s ease 0.3s forwards;
     }
     .hero-art {
       font-family: var(--mono);
@@ -489,24 +493,26 @@
   <section id="hero">
     <canvas id="hero-canvas"></canvas>
     <div class="hero-radial"></div>
+    <h1 class="hero-name">Ruhulla<br><em>Sheik</em></h1>
     <div class="hero-content">
       <p class="hero-eyebrow">Bangalore, India &nbsp;·&nbsp; Open to collaborate</p>
-      <h1 class="hero-name">Ruhulla <em>Sheik</em></h1>
       <pre class="hero-art" aria-hidden="true">
-    ┌─────────────────────────────────┐
-    │  $ connect --enterprise --ai    │
-    │  > discovering APIs...  ████░░  │
-    │  > spinning up agents.. ██████  │
-    │  > coffee_level: dangerously_low│
-    └─────────────────────────────────┘
-         ║
-    ─────╨─────
-    ╔═╗  │  ╔═╗       ☁  Azure
-    ║ ╠══╪══╣ ║      /
-    ╚═╝  │  ╚═╝   🤖─── MCP
-    ─────┴─────      \
-       ╱   ╲          ☁  AKS
-      ☕   💻</pre>
+  ╔══════════════════════════════════╗
+  ║   HUMAN.EXE  v12.0  — RUNNING   ║
+  ╠══════════════════════════════════╣
+  ║  ☕ coffee_level  ████████  MAX  ║
+  ║  🧠 thinking...  ██████░░  75%  ║
+  ║  🤖 training AI  ████████  DONE ║
+  ║  😴 sleep_mode   ░░░░░░░░  OFF  ║
+  ║  📅 meetings     ░░░░░░░░  0    ║
+  ╠══════════════════════════════════╣
+  ║  > please do not interrupt       ║
+  ║  > another coffee loading...     ║
+  ╚══════════════════════════════════╝
+           ║
+       (◕‿◕)  ← engineer.exe
+       /|   |\
+      ☕     💻</pre>
       <p class="hero-typewriter"><span id="tw"></span><span class="cursor"></span></p>
       <p class="hero-sub">
         12+ years building infrastructure at the intersection of supply chain, cloud, and AI.
