@@ -127,13 +127,28 @@
     .hero-name {
       font-family: var(--display);
       font-weight: 800;
-      font-size: clamp(3.2rem, 11vw, 7.5rem);
-      line-height: 0.95;
-      letter-spacing: -0.03em;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
       color: var(--text);
       margin-bottom: 1.75rem;
       opacity: 0;
       animation: fadeUp 0.7s ease 0.4s forwards;
+    }
+    .hero-art {
+      font-family: var(--mono);
+      font-size: clamp(0.55rem, 1.2vw, 0.72rem);
+      line-height: 1.5;
+      color: var(--accent-2);
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.5s forwards;
+      margin-bottom: 1.25rem;
+      text-align: left;
+      display: inline-block;
+      background: rgba(79,70,229,0.05);
+      border: 1px solid rgba(79,70,229,0.12);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
     }
     .hero-name em {
       font-style: normal;
@@ -476,7 +491,22 @@
     <div class="hero-radial"></div>
     <div class="hero-content">
       <p class="hero-eyebrow">Bangalore, India &nbsp;·&nbsp; Open to collaborate</p>
-      <h1 class="hero-name">Ruhulla<br><em>Sheik</em></h1>
+      <h1 class="hero-name">Ruhulla <em>Sheik</em></h1>
+      <pre class="hero-art" aria-hidden="true">
+    ┌─────────────────────────────────┐
+    │  $ connect --enterprise --ai    │
+    │  > discovering APIs...  ████░░  │
+    │  > spinning up agents.. ██████  │
+    │  > coffee_level: dangerously_low│
+    └─────────────────────────────────┘
+         ║
+    ─────╨─────
+    ╔═╗  │  ╔═╗       ☁  Azure
+    ║ ╠══╪══╣ ║      /
+    ╚═╝  │  ╚═╝   🤖─── MCP
+    ─────┴─────      \
+       ╱   ╲          ☁  AKS
+      ☕   💻</pre>
       <p class="hero-typewriter"><span id="tw"></span><span class="cursor"></span></p>
       <p class="hero-sub">
         12+ years building infrastructure at the intersection of supply chain, cloud, and AI.
