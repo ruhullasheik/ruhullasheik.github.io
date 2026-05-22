@@ -3,7 +3,7 @@
 **AI Platform Engineer | Senior Software Engineer | Platform Engineer | Integration Engineer**
 
 **Email:** sk.ruhulla@gmail.com | **Phone:** +91 9035786999
-**LinkedIn:** linkedin.com/in/ruhullasheik | **GitHub:** github.com/ruhullasheik
+**LinkedIn:** linkedin.com/in/ruhullasheik | **GitHub:** github.com/ruhullasheik | **Site:** ruhullasheik.github.io
 
 ---
 
