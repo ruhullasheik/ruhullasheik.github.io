@@ -573,18 +573,96 @@
     @keyframes pulse   { 0%,100%{opacity:0.3;} 50%{opacity:1;} }
 
     /* ── RESPONSIVE ──────────────────────── */
-    @media (max-width: 600px) {
+    /* ── HAMBURGER ───────────────────────── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+      z-index: 101;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text-2);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── MOBILE MENU ─────────────────────── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      z-index: 98;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: var(--mono);
+      font-size: 1.3rem;
+      color: var(--text-2);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      transition: color 0.2s;
+    }
+    .mobile-menu a:hover { color: var(--accent-2); }
+
+    /* ── RESPONSIVE ──────────────────────── */
+    @media (max-width: 700px) {
       nav { padding: 0 1.25rem; }
       .nav-links { display: none; }
-      .section-wrap { padding: 4rem 1.25rem; }
+      .nav-hamburger { display: flex; }
+
+      #hero { min-height: 100svh; }
+      .hero-content { margin-bottom: 120px; padding: 1.25rem; }
+      #walk-canvas { height: 100px; bottom: 40px; }
+      .hero-name { font-size: 0.9rem; top: 70px; left: 1.25rem; }
+
+      .section-wrap { padding: 3.5rem 1.25rem; }
+      .section-title { margin-bottom: 2rem; }
+
       .acts { padding-left: 1.5rem; }
       .act { padding-left: 1.75rem; }
-      .stat { padding: 0.5rem 1.2rem; border-right: none; border-bottom: 1px solid var(--border); }
-      .stat:last-child { border-bottom: none; }
+
+      .projects-grid { grid-template-columns: 1fr; }
+
+      .stack-group { flex-direction: column; gap: 0.4rem; }
+      .stack-group-label { min-width: unset; margin-bottom: 0.2rem; }
+      .stack-groups { gap: 1.5rem; }
+
+      .quote-block { padding: 1.75rem 1.25rem; }
+      .quote-mark { font-size: 2.5rem; top: 0.75rem; left: 1rem; }
+
+      .contact-row { flex-direction: column; align-items: stretch; }
+      .contact-row .btn { justify-content: center; }
+
+      .hero-cta { flex-direction: column; align-items: center; }
+      .hero-cta .btn { width: 220px; justify-content: center; }
     }
   </style>
 </head>
 <body>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#story" class="mobile-link">story</a>
+    <a href="#projects" class="mobile-link">projects</a>
+    <a href="#stack" class="mobile-link">stack</a>
+    <a href="#testimonial" class="mobile-link">rec</a>
+    <a href="#contact" class="mobile-link">contact</a>
+  </div>
 
   <!-- NAV -->
   <nav id="nav">
@@ -596,6 +674,9 @@
       <li><a href="#testimonial">Testimonial</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <!-- HERO -->
@@ -868,6 +949,20 @@
   </footer>
 
   <script>
+    // ── Hamburger menu ──────────────────────
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+
     // ── Nav scroll ──────────────────────────
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
