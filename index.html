@@ -48,7 +48,7 @@
       top: 0; left: 0; right: 0;
       z-index: 100;
       padding: 0 2.5rem;
-      height: 58px;
+      height: 64px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -70,18 +70,35 @@
     }
     .nav-links {
       display: flex;
-      gap: 2.25rem;
+      gap: 0.5rem;
       list-style: none;
     }
     .nav-links a {
       color: var(--text-2);
       text-decoration: none;
       font-family: var(--mono);
-      font-size: 0.78rem;
-      letter-spacing: 0.06em;
-      transition: color 0.2s;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 4px;
+      border: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+      position: relative;
     }
-    .nav-links a:hover { color: var(--text); }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 4px; left: 50%; right: 50%;
+      height: 1px;
+      background: var(--accent);
+      transition: left 0.25s, right 0.25s;
+    }
+    .nav-links a:hover {
+      color: var(--accent-2);
+      border-color: var(--border-acc);
+      background: var(--accent-glow);
+    }
+    .nav-links a:hover::after { left: 0.85rem; right: 0.85rem; }
 
     /* ── HERO ────────────────────────────── */
     #hero {
@@ -113,7 +130,6 @@
       text-align: center;
       padding: 2rem;
       max-width: 860px;
-      margin-bottom: 180px;
     }
     .hero-eyebrow {
       font-family: var(--mono);
@@ -127,7 +143,7 @@
     }
     .hero-name {
       position: absolute;
-      top: 80px;
+      top: 142px;
       left: 2.5rem;
       font-family: var(--mono);
       font-weight: 500;
@@ -139,15 +155,6 @@
       z-index: 3;
       opacity: 0;
       animation: fadeUp 0.7s ease 0.3s forwards;
-    }
-    #walk-canvas {
-      position: absolute;
-      bottom: 80px;
-      left: 0;
-      width: 100%;
-      height: 160px;
-      z-index: 1;
-      pointer-events: none;
     }
     .hero-name em {
       font-style: normal;
@@ -175,13 +182,21 @@
       animation: blink 1s step-end infinite;
     }
     .hero-sub {
-      color: var(--text-2);
-      font-size: 1.15rem;
-      max-width: 560px;
+      color: var(--text);
+      font-size: 1.22rem;
+      max-width: 600px;
       margin: 0 auto 2.75rem;
-      line-height: 1.8;
+      line-height: 1.75;
       opacity: 0;
       animation: fadeUp 0.7s ease 0.8s forwards;
+    }
+    .hero-sub-hl {
+      color: var(--accent-2);
+      font-weight: 500;
+    }
+    .hero-sub-dim {
+      color: var(--text-2);
+      font-size: 1.05rem;
     }
     .hero-cta {
       display: flex;
@@ -538,6 +553,19 @@
     footer a { color: var(--accent-2); text-decoration: none; }
     footer a:hover { color: var(--text); }
 
+    /* ── COFFEE CANVAS ──────────────────── */
+    #coffee-canvas {
+      position: absolute;
+      top: 76px;
+      left: 2.5rem;
+      width: 54px;
+      height: 62px;
+      z-index: 3;
+      pointer-events: none;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.3s forwards;
+    }
+
     /* ── KEYFRAMES ───────────────────────── */
     @keyframes fadeUp  { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
     @keyframes fadeIn  { from { opacity:0; } to { opacity:0.65; } }
@@ -562,11 +590,11 @@
   <nav id="nav">
     <a href="#hero" class="nav-logo">rs./</a>
     <ul class="nav-links">
-      <li><a href="#story">story</a></li>
-      <li><a href="#projects">projects</a></li>
-      <li><a href="#stack">stack</a></li>
-      <li><a href="#testimonial">rec</a></li>
-      <li><a href="#contact">contact</a></li>
+      <li><a href="#story">Story</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#testimonial">Testimonial</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
@@ -574,14 +602,14 @@
   <section id="hero">
     <canvas id="hero-canvas"></canvas>
     <div class="hero-radial"></div>
-    <canvas id="walk-canvas" aria-hidden="true"></canvas>
+    <canvas id="coffee-canvas" aria-hidden="true"></canvas>
     <h1 class="hero-name">Ruhulla.Sheik</h1>
     <div class="hero-content">
       <p class="hero-eyebrow">Bangalore, India &nbsp;·&nbsp; Open to collaborate</p>
       <p class="hero-typewriter"><span id="tw"></span><span class="cursor"></span></p>
       <p class="hero-sub">
-        12+ years building software — from ERP integrations to cloud platforms to AI gateways.
-        Currently at Aptean, working on MCP servers and platform services.
+        <span class="hero-sub-hl">12+ years building software — from ERP integrations to cloud platforms to AI gateways.</span><br>
+        <span class="hero-sub-dim">Currently at Aptean, working on MCP servers and platform services.</span>
       </p>
       <div class="hero-cta">
         <a href="pages/Ruhulla_Sheik_Resume.pdf" download class="btn btn-primary">↓ Resume</a>
@@ -596,15 +624,6 @@
   </section>
 
   <div class="divider"></div>
-
-  <!-- STATS -->
-  <div class="stats-strip">
-    <div class="stat"><span class="stat-n">12+</span><span class="stat-l">years</span></div>
-    <div class="stat"><span class="stat-n">20K+</span><span class="stat-l">API calls / day</span></div>
-    <div class="stat"><span class="stat-n">3</span><span class="stat-l">acquisitions survived</span></div>
-    <div class="stat"><span class="stat-n">160+</span><span class="stat-l">modules patched (Log4Shell)</span></div>
-    <div class="stat"><span class="stat-n">5</span><span class="stat-l">envs owned end-to-end</span></div>
-  </div>
 
   <!-- STORY -->
   <div class="section-wrap" id="story">
@@ -821,7 +840,7 @@
         AI engineering patterns while maintaining his established backend expertise is a testament
         to his versatility as a quick, action-oriented learner.
       </p>
-      <span class="quote-author">— Robert Durell · Senior Software Architect, Aptean · Direct Manager, May 2026</span>
+      <span class="quote-author">— Robert Durell · Senior Software Architect, Aptean · Direct Manager, May 2026 &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/ruhullasheik/" target="_blank" rel="noopener" style="color:var(--accent-2);text-decoration:none;">View on LinkedIn ↗</a></span>
     </div>
   </div>
 
@@ -924,134 +943,104 @@
     resize();
     draw();
 
-    // ── Walking figure ──────────────────────
-    const wc = document.getElementById('walk-canvas');
-    const wx = wc.getContext('2d');
+    // ── Coffee cup canvas ───────────────────
+    (function() {
+      const cc   = document.getElementById('coffee-canvas');
+      const cctx = cc.getContext('2d');
+      const DPR  = window.devicePixelRatio || 1;
+      const CW = 54, CH = 62;
+      cc.width  = CW * DPR;
+      cc.height = CH * DPR;
+      cctx.scale(DPR, DPR);
 
-    function resizeWalk() {
-      wc.width = window.innerWidth * window.devicePixelRatio;
-      wc.height = 160 * window.devicePixelRatio;
-      wx.scale(window.devicePixelRatio, window.devicePixelRatio);
-    }
-    resizeWalk();
-    window.addEventListener('resize', () => { resizeWalk(); }, { passive: true });
+      const CX = CW / 2, CY = CH / 2;
+      const R  = 19;  // icon radius
+      const A1 = '#d97706', A2 = '#f59e0b', A3 = '#fbbf24';
+      let cf = 0;
 
-    const fig = { x: -80, dir: 1, speed: 1.4, frame: 0 };
-    const W = () => window.innerWidth;
-    const particles = [];
+      function animCoffee() {
+        cf++;
+        cctx.clearRect(0, 0, CW, CH);
 
-    function spawnParticle() {
-      const symbols = ['01','∑','λ','→','⊗','∞','◈','>>','{}','[]','AI','∇','⌘','⬡'];
-      particles.push({
-        x: fig.x + (Math.random() - 0.5) * 50,
-        y: 120,
-        ch: symbols[Math.floor(Math.random() * symbols.length)],
-        vy: -(0.6 + Math.random() * 1.1),
-        vx: (Math.random() - 0.5) * 0.9,
-        life: 1,
-        size: 9 + Math.random() * 5,
-      });
-    }
+        // Ambient halo
+        const halo = cctx.createRadialGradient(CX, CY, 0, CX, CY, R * 2.2);
+        halo.addColorStop(0, 'rgba(245,158,11,0.16)');
+        halo.addColorStop(1, 'rgba(0,0,0,0)');
+        cctx.fillStyle = halo;
+        cctx.beginPath(); cctx.arc(CX, CY, R * 2.2, 0, Math.PI * 2); cctx.fill();
 
-    function drawFig(x, y, frame, dir) {
-      wx.save();
-      if (dir === -1) { wx.translate(x * 2, 0); wx.scale(-1, 1); }
+        cctx.save();
+        cctx.shadowColor = A2;
+        cctx.shadowBlur  = 14;
+        cctx.strokeStyle = A2;
+        cctx.lineWidth   = 1.8;
 
-      const t = frame * 0.1;
-      const leg = Math.sin(t) * 18;
-      const arm = Math.sin(t) * 14;
-      const bob = Math.abs(Math.sin(t)) * 2.5;
-      const hy = y - 74 + bob;
+        const cw = R * 0.82, ch = R * 0.92;
 
-      wx.lineWidth = 2.5; wx.lineCap = 'round'; wx.lineJoin = 'round';
+        // Cup body (trapezoid)
+        cctx.beginPath();
+        cctx.moveTo(CX - cw/2,   CY - ch*0.28);
+        cctx.lineTo(CX + cw/2,   CY - ch*0.28);
+        cctx.lineTo(CX + cw*0.4, CY + ch*0.5);
+        cctx.lineTo(CX - cw*0.4, CY + ch*0.5);
+        cctx.closePath();
+        cctx.save(); cctx.fillStyle = 'rgba(245,158,11,0.09)'; cctx.fill(); cctx.restore();
+        cctx.stroke();
 
-      wx.strokeStyle = '#f59e0b';
-      wx.beginPath(); wx.arc(x, hy, 12, 0, Math.PI * 2); wx.stroke();
-      wx.fillStyle = '#f59e0b';
-      wx.beginPath(); wx.arc(x - 4, hy - 2, 2, 0, Math.PI * 2); wx.fill();
-      wx.beginPath(); wx.arc(x + 4, hy - 2, 2, 0, Math.PI * 2); wx.fill();
-      wx.beginPath(); wx.arc(x, hy + 3, 5, 0.2, Math.PI - 0.2); wx.stroke();
+        // Coffee fill (clipped gradient)
+        cctx.save();
+        cctx.beginPath();
+        cctx.moveTo(CX - cw/2,   CY - ch*0.28);
+        cctx.lineTo(CX + cw/2,   CY - ch*0.28);
+        cctx.lineTo(CX + cw*0.4, CY + ch*0.5);
+        cctx.lineTo(CX - cw*0.4, CY + ch*0.5);
+        cctx.closePath(); cctx.clip();
+        const lg = cctx.createLinearGradient(CX, CY, CX, CY + ch*0.5);
+        lg.addColorStop(0,   'rgba(245,158,11,0)');
+        lg.addColorStop(0.58,'rgba(217,119,6,0.22)');
+        lg.addColorStop(1,   'rgba(160,80,0,0.42)');
+        cctx.fillStyle = lg;
+        cctx.fillRect(CX - cw, CY - ch, cw*2, ch*2);
+        cctx.restore();
 
-      wx.beginPath(); wx.moveTo(x, hy + 12); wx.lineTo(x, y - 28); wx.stroke();
+        // Handle
+        cctx.beginPath();
+        cctx.arc(CX + cw*0.52, CY + ch*0.1, ch*0.25, -Math.PI*0.5, Math.PI*0.5);
+        cctx.stroke();
 
-      const cx = x + 24 + arm * 0.2, cy = hy + 22;
-      wx.beginPath(); wx.moveTo(x, hy + 18); wx.lineTo(cx, cy); wx.stroke();
+        // Saucer
+        cctx.beginPath();
+        cctx.ellipse(CX, CY + ch*0.58, cw*0.68, ch*0.12, 0, 0, Math.PI*2);
+        cctx.stroke();
 
-      wx.strokeStyle = '#fbbf24'; wx.fillStyle = 'rgba(251,191,36,0.13)';
-      wx.lineWidth = 2;
-      wx.beginPath();
-      wx.moveTo(cx - 5, cy - 8); wx.lineTo(cx + 8, cy - 8);
-      wx.lineTo(cx + 6, cy + 4); wx.lineTo(cx - 3, cy + 4);
-      wx.closePath(); wx.fill(); wx.stroke();
-      wx.beginPath(); wx.arc(cx + 9, cy - 2, 4, -Math.PI / 2, Math.PI / 2); wx.stroke();
+        cctx.restore();
 
-      for (let s = 0; s < 3; s++) {
-        const sp = ((frame * 0.07) + s * 0.34) % 1;
-        const sx = cx + s * 4 - 4, sy = cy - 8 - sp * 16;
-        const sw = Math.sin(sp * Math.PI * 2 + s) * 3;
-        const al = Math.sin(sp * Math.PI) * 0.55;
-        wx.strokeStyle = `rgba(251,191,36,${al})`; wx.lineWidth = 1.5;
-        wx.beginPath();
-        wx.moveTo(sx, cy - 8);
-        wx.quadraticCurveTo(sx + sw, sy - 4, sx - sw * 0.5, sy);
-        wx.stroke();
-      }
+        // Steam wisps
+        for (let i = 0; i < 3; i++) {
+          const sx    = CX + (i - 1) * cw * 0.28;
+          const baseY = CY - ch * 0.3;
+          const ph    = ((cf * 0.013) + i * 0.34) % 1;
+          const ty    = baseY - ph * ch * 1.0;
+          const wsx   = Math.sin(ph * Math.PI * 2.5 + i * 1.3) * cw * 0.13;
+          const alpha = (ph < 0.5 ? ph * 2 : (1 - ph) * 2) * 0.68;
 
-      wx.strokeStyle = '#f59e0b'; wx.lineWidth = 2.5;
-      wx.beginPath();
-      wx.moveTo(x, hy + 18);
-      wx.lineTo(x - 20 - arm * 0.5, hy + 34 + arm * 0.3);
-      wx.stroke();
-
-      wx.beginPath(); wx.moveTo(x, y - 28); wx.lineTo(x + leg * 0.8, y - 10); wx.lineTo(x + leg, y); wx.stroke();
-      wx.beginPath(); wx.moveTo(x, y - 28); wx.lineTo(x - leg * 0.8, y - 10); wx.lineTo(x - leg, y); wx.stroke();
-
-      if (Math.floor(frame / 60) % 2 === 0) {
-        const thoughts = ['training...', 'optimizing...', 'need coffee', 'deploying...', 'thinking...'];
-        const msg = thoughts[Math.floor(frame / 120) % thoughts.length];
-        wx.fillStyle = 'rgba(245,158,11,0.08)';
-        wx.strokeStyle = 'rgba(245,158,11,0.3)';
-        wx.lineWidth = 1;
-        const bw = msg.length * 7 + 16, bh = 22, bx = x + 10, by = hy - 44;
-        wx.beginPath();
-        wx.roundRect(bx, by, bw, bh, 6);
-        wx.fill(); wx.stroke();
-        wx.fillStyle = 'rgba(245,158,11,0.85)';
-        wx.font = '10px JetBrains Mono, monospace';
-        wx.fillText(msg, bx + 8, by + 15);
-        for (let d = 0; d < 3; d++) {
-          wx.beginPath();
-          wx.arc(bx - 3 - d * 5, by + bh - d * 2, 2 - d * 0.4, 0, Math.PI * 2);
-          wx.fillStyle = 'rgba(245,158,11,0.2)';
-          wx.fill();
+          cctx.save();
+          cctx.globalAlpha  = alpha;
+          cctx.strokeStyle  = A3;
+          cctx.lineWidth    = 1.4;
+          cctx.shadowColor  = A3;
+          cctx.shadowBlur   = 5;
+          cctx.beginPath();
+          cctx.moveTo(sx, baseY);
+          cctx.bezierCurveTo(sx + wsx, baseY - ch*0.28, sx - wsx, baseY - ch*0.65, sx + wsx*0.4, ty);
+          cctx.stroke();
+          cctx.restore();
         }
-      }
 
-      wx.restore();
-    }
-
-    function animWalk() {
-      wx.clearRect(0, 0, W(), 160);
-      fig.x += fig.speed * fig.dir;
-      fig.frame++;
-      if (fig.x > W() + 80) fig.dir = -1;
-      if (fig.x < -80)       fig.dir =  1;
-      if (fig.frame % 10 === 0) spawnParticle();
-      for (let i = particles.length - 1; i >= 0; i--) {
-        const p = particles[i];
-        p.x += p.vx; p.y += p.vy; p.life -= 0.014;
-        if (p.life <= 0) { particles.splice(i, 1); continue; }
-        wx.font = `${p.size}px 'JetBrains Mono', monospace`;
-        wx.fillStyle = `rgba(129,140,248,${p.life * 0.65})`;
-        wx.fillText(p.ch, p.x, p.y);
+        requestAnimationFrame(animCoffee);
       }
-      wx.strokeStyle = 'rgba(255,255,255,0.04)';
-      wx.lineWidth = 1;
-      wx.beginPath(); wx.moveTo(0, 140); wx.lineTo(W(), 140); wx.stroke();
-      drawFig(fig.x, 138, fig.frame, fig.dir);
-      requestAnimationFrame(animWalk);
-    }
-    animWalk();
+      animCoffee();
+    })();
 
     // ── Scroll reveal ───────────────────────
     const obs = new IntersectionObserver((entries) => {
