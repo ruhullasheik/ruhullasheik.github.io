@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ruhulla Sheik — AI Platform Engineer</title>
+  <title>Ruhulla Sheik — AI Platform Engineer (Warm)</title>
   <meta name="description" content="AI Platform Engineer · Tech Lead · Building the infra that lets AI agents talk to enterprise software." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,16 +12,16 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:           #080811;
-      --bg-2:         #0d0d1a;
-      --bg-3:         #111126;
-      --border:       rgba(255,255,255,0.06);
-      --border-acc:   rgba(79,70,229,0.3);
-      --text:         #e8e8f0;
-      --text-2:       #9090aa;
-      --accent:       #4f46e5;
-      --accent-2:     #818cf8;
-      --accent-glow:  rgba(79,70,229,0.12);
+      --bg:           #0f0e09;
+      --bg-2:         #1a1710;
+      --bg-3:         #201d13;
+      --border:       rgba(255,255,255,0.07);
+      --border-acc:   rgba(217,119,6,0.35);
+      --text:         #f5f0e8;
+      --text-2:       #a89070;
+      --accent:       #d97706;
+      --accent-2:     #f59e0b;
+      --accent-glow:  rgba(217,119,6,0.12);
       --mono:         'JetBrains Mono', monospace;
       --display:      'Syne', sans-serif;
       --body:         'DM Sans', sans-serif;
@@ -56,7 +56,7 @@
       border-bottom: 1px solid transparent;
     }
     nav.scrolled {
-      background: rgba(8,8,17,0.88);
+      background: rgba(15,14,9,0.92);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       border-bottom-color: var(--border);
@@ -102,7 +102,7 @@
       width: 700px;
       height: 700px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(79,70,229,0.13) 0%, transparent 68%);
+      background: radial-gradient(circle, rgba(217,119,6,0.09) 0%, transparent 68%);
       top: 50%; left: 50%;
       transform: translate(-50%,-50%);
       pointer-events: none;
@@ -113,6 +113,7 @@
       text-align: center;
       padding: 2rem;
       max-width: 860px;
+      margin-bottom: 180px;
     }
     .hero-eyebrow {
       font-family: var(--mono);
@@ -128,24 +129,25 @@
       position: absolute;
       top: 80px;
       left: 2.5rem;
-      font-family: var(--display);
-      font-weight: 800;
-      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-family: var(--mono);
+      font-weight: 500;
+      font-size: clamp(0.9rem, 1.5vw, 1.1rem);
       line-height: 1.15;
-      letter-spacing: -0.02em;
-      color: var(--text);
+      letter-spacing: 0.02em;
+      color: var(--text-2);
       text-align: left;
       z-index: 3;
       opacity: 0;
       animation: fadeUp 0.7s ease 0.3s forwards;
     }
     #walk-canvas {
-      display: block;
+      position: absolute;
+      bottom: 80px;
+      left: 0;
       width: 100%;
       height: 160px;
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeIn 1s ease 0.8s forwards;
+      z-index: 1;
+      pointer-events: none;
     }
     .hero-name em {
       font-style: normal;
@@ -156,7 +158,7 @@
     }
     .hero-typewriter {
       font-family: var(--mono);
-      font-size: clamp(0.82rem, 2vw, 0.98rem);
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
       color: var(--text-2);
       margin-bottom: 2rem;
       min-height: 1.4em;
@@ -174,10 +176,10 @@
     }
     .hero-sub {
       color: var(--text-2);
-      font-size: 1rem;
-      max-width: 520px;
+      font-size: 1.15rem;
+      max-width: 560px;
       margin: 0 auto 2.75rem;
-      line-height: 1.75;
+      line-height: 1.8;
       opacity: 0;
       animation: fadeUp 0.7s ease 0.8s forwards;
     }
@@ -234,9 +236,9 @@
       color: #fff;
     }
     .btn-primary:hover {
-      background: #5b52f0;
+      background: #b45309;
       transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(79,70,229,0.35);
+      box-shadow: 0 8px 28px rgba(217,119,6,0.35);
     }
     .btn-ghost {
       background: transparent;
@@ -279,6 +281,42 @@
       margin-bottom: 3rem;
     }
 
+    /* ── STATS STRIP ─────────────────────── */
+    .stats-strip {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+      background: var(--bg-2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem;
+    }
+    .stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.5rem 2.5rem;
+      border-right: 1px solid var(--border);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-n {
+      font-family: var(--display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent-2);
+      letter-spacing: -0.03em;
+    }
+    .stat-l {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--text-2);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 0.2rem;
+      text-align: center;
+    }
+
     /* ── STORY ───────────────────────────── */
     .acts {
       position: relative;
@@ -306,7 +344,7 @@
       width: 10px; height: 10px;
       border-radius: 50%;
       background: var(--accent);
-      box-shadow: 0 0 14px rgba(79,70,229,0.7);
+      box-shadow: 0 0 14px rgba(217,119,6,0.65);
     }
     .act-meta {
       display: flex;
@@ -404,14 +442,13 @@
       font-family: var(--mono);
       font-size: 0.68rem;
       color: var(--accent-2);
-      background: rgba(79,70,229,0.07);
-      border: 1px solid rgba(79,70,229,0.14);
+      background: rgba(217,119,6,0.07);
+      border: 1px solid rgba(217,119,6,0.18);
       padding: 0.18em 0.5em;
       border-radius: 3px;
     }
 
     /* ── STACK ───────────────────────────── */
-    .stack-cloud { display: flex; flex-wrap: wrap; gap: 0.55rem; }
     .stack-tag {
       font-family: var(--mono);
       font-size: 0.78rem;
@@ -427,6 +464,54 @@
       border-color: var(--accent);
       color: var(--accent-2);
       background: var(--accent-glow);
+    }
+    .stack-groups { display: flex; flex-direction: column; gap: 1.25rem; }
+    .stack-group { display: flex; align-items: baseline; gap: 0.75rem; flex-wrap: wrap; }
+    .stack-group-label {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--accent-2);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      min-width: 90px;
+      padding-top: 0.1em;
+      flex-shrink: 0;
+    }
+
+    /* ── TESTIMONIAL ─────────────────────── */
+    #testimonial { text-align: center; }
+    .quote-block {
+      max-width: 680px;
+      margin: 0 auto;
+      background: var(--bg-2);
+      border: 1px solid var(--border-acc);
+      border-radius: 14px;
+      padding: 2.5rem;
+      position: relative;
+    }
+    .quote-mark {
+      font-size: 4rem;
+      color: var(--accent);
+      opacity: 0.2;
+      font-family: Georgia, serif;
+      line-height: 1;
+      position: absolute;
+      top: 1rem; left: 1.75rem;
+    }
+    .quote-text {
+      color: var(--text-2);
+      font-size: 0.97rem;
+      line-height: 1.8;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .quote-author {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--accent-2);
+      letter-spacing: 0.06em;
     }
 
     /* ── CONTACT ─────────────────────────── */
@@ -466,6 +551,8 @@
       .section-wrap { padding: 4rem 1.25rem; }
       .acts { padding-left: 1.5rem; }
       .act { padding-left: 1.75rem; }
+      .stat { padding: 0.5rem 1.2rem; border-right: none; border-bottom: 1px solid var(--border); }
+      .stat:last-child { border-bottom: none; }
     }
   </style>
 </head>
@@ -478,6 +565,7 @@
       <li><a href="#story">story</a></li>
       <li><a href="#projects">projects</a></li>
       <li><a href="#stack">stack</a></li>
+      <li><a href="#testimonial">rec</a></li>
       <li><a href="#contact">contact</a></li>
     </ul>
   </nav>
@@ -486,14 +574,14 @@
   <section id="hero">
     <canvas id="hero-canvas"></canvas>
     <div class="hero-radial"></div>
-    <h1 class="hero-name">Ruhulla<br><em>Sheik</em></h1>
+    <canvas id="walk-canvas" aria-hidden="true"></canvas>
+    <h1 class="hero-name">Ruhulla.Sheik</h1>
     <div class="hero-content">
       <p class="hero-eyebrow">Bangalore, India &nbsp;·&nbsp; Open to collaborate</p>
-      <canvas id="walk-canvas" aria-hidden="true"></canvas>
       <p class="hero-typewriter"><span id="tw"></span><span class="cursor"></span></p>
       <p class="hero-sub">
-        12+ years building infrastructure at the intersection of supply chain, cloud, and AI.
-        Currently: connecting AI agents to the systems that run the business.
+        12+ years building software — from ERP integrations to cloud platforms to AI gateways.
+        Currently at Aptean, working on MCP servers and platform services.
       </p>
       <div class="hero-cta">
         <a href="pages/Ruhulla_Sheik_Resume.pdf" download class="btn btn-primary">↓ Resume</a>
@@ -509,6 +597,15 @@
 
   <div class="divider"></div>
 
+  <!-- STATS -->
+  <div class="stats-strip">
+    <div class="stat"><span class="stat-n">12+</span><span class="stat-l">years</span></div>
+    <div class="stat"><span class="stat-n">20K+</span><span class="stat-l">API calls / day</span></div>
+    <div class="stat"><span class="stat-n">3</span><span class="stat-l">acquisitions survived</span></div>
+    <div class="stat"><span class="stat-n">160+</span><span class="stat-l">modules patched (Log4Shell)</span></div>
+    <div class="stat"><span class="stat-n">5</span><span class="stat-l">envs owned end-to-end</span></div>
+  </div>
+
   <!-- STORY -->
   <div class="section-wrap" id="story">
     <p class="section-label">career arc</p>
@@ -522,11 +619,12 @@
         </div>
         <h3 class="act-title">🔗 The Integration Engineer</h3>
         <p class="act-body">
-          Six years deep inside SAP, Oracle, and JDE — extracting, transforming, and modelling
-          supply chain data so enterprise planning systems could actually think. Owned pipelines
-          end to end: ERP extraction → data modelling → planning ingestion → outcomes back to the customer.
+          Six years inside SAP HANA, Oracle EBS, and JDE — owned complete integration projects
+          for enterprise customers (SEI/7-Eleven, ATK, VISTA) solo, including direct customer
+          communication. Built the pipelines that extracted, cleansed, and modelled supply chain
+          data so enterprise planning systems could actually think.
         </p>
-        <p class="act-lesson">Learned that bad data boundaries break everything.</p>
+        <p class="act-lesson">Learned that owning a problem end-to-end — from customer call to production — is the fastest way to understand it deeply.</p>
       </div>
 
       <div class="act">
@@ -534,14 +632,15 @@
           <span class="act-num">ACT II</span>
           <span class="act-period">2020 – 2024</span>
         </div>
-        <h3 class="act-title">☁️ The Cloud Architect</h3>
+        <h3 class="act-title">☁️ The Platform Builder</h3>
         <p class="act-body">
-          Took what lived on-prem and made it cloud-native. Re-platformed legacy apps into
-          multi-tenant solutions on Azure — reducing costs, improving scale, and giving teams
-          back the time they were wasting on ops. Apache Airflow, identity systems, Google
-          Zanzibar-based authorization.
+          Moved from integration templates to building the platform itself. Core member of the
+          R&amp;D team that re-platformed supply chain tooling into multi-tenant cloud services
+          on Azure — Apache Airflow with OAuth2 SSO, Google Zanzibar authorization,
+          IdentityServer4 identity gateway, Java/Quarkus middleware. 79% commit share on the
+          Airflow service. Led the Platform Entitlements service as Tech Lead from day one.
         </p>
-        <p class="act-lesson">Learned that modernisation is only worth it if the new thing is actually better.</p>
+        <p class="act-lesson">Learned that platform engineering is about making other teams move faster — the best infra is invisible.</p>
       </div>
 
       <div class="act">
@@ -551,12 +650,14 @@
         </div>
         <h3 class="act-title">🤖 The AI Platform Engineer</h3>
         <p class="act-body">
-          Building the layer that lets AI agents act on real enterprise data. MCP gateways,
-          agent pipelines, Azure OpenAI on AKS. The mission: close the gap between what AI
-          <em>can</em> do and what businesses are <em>actually</em> using it for — and help
-          teams make that journey without the false starts.
+          Building the infrastructure layer that lets AI agents act on real enterprise data. Led
+          and built a production MCP (Model Context Protocol) gateway that auto-discovers OpenAPI
+          specs and exposes them as tools — 20K+ API calls/day across a multi-tenant Azure
+          platform. Also shipped a Langflow + Azure OpenAI conversational agent for
+          natural-language tool discovery. Using Claude Code and spec-driven development
+          throughout.
         </p>
-        <p class="act-lesson">Still learning. Moving fast.</p>
+        <p class="act-lesson">Still learning. Moving fast. The gap between what AI can do and what enterprises are actually using — that's the interesting problem.</p>
       </div>
 
     </div>
@@ -577,29 +678,68 @@
         </div>
         <h3 class="card-name">MCP Gateway</h3>
         <p class="card-desc">
-          Production AI gateway that auto-discovers OpenAPI specs and exposes enterprise APIs
-          as MCP tools for AI agents. Serves 20K+ tool calls/day on a multi-tenant AKS platform.
+          Production AI gateway that auto-discovers OpenAPI specs and exposes enterprise APIs as
+          MCP tools for AI agents. Designed multi-tenant URL routing, IAM token translation,
+          distributed Redis caching, and Tool Catalogue discovery API. Tech Lead and mandatory
+          PR reviewer for 8 contributors.
         </p>
         <div class="tags">
-          <span class="tag">Python</span><span class="tag">FastMCP</span>
-          <span class="tag">FastAPI</span><span class="tag">Redis</span><span class="tag">AKS</span>
+          <span class="tag">Python</span><span class="tag">FastMCP</span><span class="tag">FastAPI</span>
+          <span class="tag">Redis</span><span class="tag">OpenTelemetry</span><span class="tag">AKS</span>
         </div>
       </div>
 
       <div class="card">
         <div class="card-head">
-          <span class="card-icon">💰</span>
-          <span class="badge badge-wip">◐ wip</span>
+          <span class="card-icon">🤖</span>
+          <span class="badge badge-prod">● prod</span>
         </div>
-        <h3 class="card-name">Skill of Money</h3>
+        <h3 class="card-name">Logility Atlas Agent</h3>
         <p class="card-desc">
-          Full-stack personal finance tracker — because finance apps deserve good UX too.
-          Built for clarity over complexity.
+          Conversational AI agent (Langflow + Azure OpenAI) for natural-language MCP tool
+          discovery. Owned end-to-end: authored the spec, built the custom MCP server, configured
+          the Langflow agent, and wired full gateway routing — using Claude Code throughout.
         </p>
         <div class="tags">
-          <span class="tag">TypeScript</span><span class="tag">Vue 3</span><span class="tag">FastAPI</span>
+          <span class="tag">Langflow</span><span class="tag">Azure OpenAI</span><span class="tag">MCP</span>
+          <span class="tag">FastAPI</span><span class="tag">Python</span>
         </div>
       </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-icon">🔐</span>
+          <span class="badge badge-prod">● prod</span>
+        </div>
+        <h3 class="card-name">Platform Entitlements</h3>
+        <p class="card-desc">
+          Universal authorization service built on Google Zanzibar / Ory Keto implementing
+          relationship-based access control (ReBAC). Tech Lead from day one — designed the
+          system, led backend, Vue 3 SPA, Kubernetes infra, and CI/CD across 6 engineers.
+        </p>
+        <div class="tags">
+          <span class="tag">C#</span><span class="tag">Vue 3</span><span class="tag">Ory Keto</span>
+          <span class="tag">Kafka</span><span class="tag">PostgreSQL</span><span class="tag">AKS</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-icon">⚙️</span>
+          <span class="badge badge-prod">● prod</span>
+        </div>
+        <h3 class="card-name">Platform Airflow / PAM</h3>
+        <p class="card-desc">
+          Primary owner (79% of commits) of Logility's Apache Airflow deployment. Drove 3
+          consecutive version upgrades, integrated OAuth2/OIDC SSO, built CI/CD and Azure Bicep
+          IaC from scratch, and added Azure Service Bus event publishing.
+        </p>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">Apache Airflow</span><span class="tag">Azure Bicep</span>
+          <span class="tag">Docker</span><span class="tag">Azure Pipelines</span>
+        </div>
+      </div>
+
 
     </div>
   </div>
@@ -610,27 +750,78 @@
   <div class="section-wrap" id="stack">
     <p class="section-label">tools of the trade</p>
     <h2 class="section-title">Stack</h2>
-    <div class="stack-cloud">
-      <span class="stack-tag">Python</span>
-      <span class="stack-tag">C#</span>
-      <span class="stack-tag">Java</span>
-      <span class="stack-tag">TypeScript</span>
-      <span class="stack-tag">Azure</span>
-      <span class="stack-tag">Kubernetes</span>
-      <span class="stack-tag">FastAPI</span>
-      <span class="stack-tag">FastMCP</span>
-      <span class="stack-tag">Apache Airflow</span>
-      <span class="stack-tag">Azure OpenAI</span>
-      <span class="stack-tag">MCP</span>
-      <span class="stack-tag">ASP.NET Core</span>
-      <span class="stack-tag">PostgreSQL</span>
-      <span class="stack-tag">Redis</span>
-      <span class="stack-tag">Docker</span>
-      <span class="stack-tag">Helm</span>
-      <span class="stack-tag">Azure Pipelines</span>
-      <span class="stack-tag">OpenTelemetry</span>
-      <span class="stack-tag">Vue 3</span>
-      <span class="stack-tag">Langflow</span>
+    <div class="stack-groups">
+      <div class="stack-group">
+        <span class="stack-group-label">AI &amp; MCP</span>
+        <span class="stack-tag">Model Context Protocol</span>
+        <span class="stack-tag">Langflow</span>
+        <span class="stack-tag">Azure OpenAI</span>
+        <span class="stack-tag">FastMCP</span>
+        <span class="stack-tag">Claude Code</span>
+      </div>
+      <div class="stack-group">
+        <span class="stack-group-label">Languages</span>
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">C#</span>
+        <span class="stack-tag">Java</span>
+        <span class="stack-tag">TypeScript</span>
+        <span class="stack-tag">PowerShell</span>
+        <span class="stack-tag">SQL</span>
+      </div>
+      <div class="stack-group">
+        <span class="stack-group-label">Cloud</span>
+        <span class="stack-tag">Azure</span>
+        <span class="stack-tag">AKS</span>
+        <span class="stack-tag">Azure Bicep</span>
+        <span class="stack-tag">Azure Pipelines</span>
+        <span class="stack-tag">Docker</span>
+        <span class="stack-tag">Kubernetes</span>
+        <span class="stack-tag">Helm</span>
+      </div>
+      <div class="stack-group">
+        <span class="stack-group-label">Frameworks</span>
+        <span class="stack-tag">ASP.NET Core</span>
+        <span class="stack-tag">FastAPI</span>
+        <span class="stack-tag">Apache Airflow</span>
+        <span class="stack-tag">Quarkus</span>
+        <span class="stack-tag">Vue 3</span>
+        <span class="stack-tag">IdentityServer4</span>
+      </div>
+      <div class="stack-group">
+        <span class="stack-group-label">Data &amp; Auth</span>
+        <span class="stack-tag">PostgreSQL</span>
+        <span class="stack-tag">Redis</span>
+        <span class="stack-tag">MongoDB</span>
+        <span class="stack-tag">OAuth2</span>
+        <span class="stack-tag">OIDC</span>
+        <span class="stack-tag">Ory Keto</span>
+      </div>
+      <div class="stack-group">
+        <span class="stack-group-label">Observability</span>
+        <span class="stack-tag">OpenTelemetry</span>
+        <span class="stack-tag">Grafana</span>
+        <span class="stack-tag">Loki</span>
+        <span class="stack-tag">Azure App Insights</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- TESTIMONIAL -->
+  <div class="section-wrap" id="testimonial">
+    <p class="section-label">from the team</p>
+    <h2 class="section-title">What they say</h2>
+    <div class="quote-block">
+      <span class="quote-mark">"</span>
+      <p class="quote-text">
+        Ruhulla has been a vital contributor to several of our most critical technical initiatives.
+        He has been instrumental in developing our new MCP Gateway, helping to securely bridge our
+        enterprise SaaS APIs with autonomous AI agents. His ability to seamlessly pivot into complex
+        AI engineering patterns while maintaining his established backend expertise is a testament
+        to his versatility as a quick, action-oriented learner.
+      </p>
+      <span class="quote-author">— Robert Durell · Senior Software Architect, Aptean · Direct Manager, May 2026</span>
     </div>
   </div>
 
@@ -641,8 +832,8 @@
     <p class="section-label">get in touch</p>
     <h2 class="section-title">Let's talk</h2>
     <p class="contact-sub">
-      Interested in AI platform work, enterprise integrations, or just want to compare notes on MCP?
-      Always up for a good conversation.
+      Building AI infrastructure, platform services, or something at the intersection of the two?
+      I'm always up for a good conversation. Based in Bangalore — open to remote collaboration.
     </p>
     <div class="contact-row">
       <a href="mailto:sk.ruhulla@gmail.com" class="btn btn-primary">sk.ruhulla@gmail.com</a>
@@ -653,7 +844,8 @@
 
   <footer>
     built by ruhulla &nbsp;·&nbsp;
-    <a href="pages/Ruhulla_Sheik_Resume.pdf" download>resume ↓</a>
+    <a href="pages/Ruhulla_Sheik_Resume.pdf" download>resume ↓</a> &nbsp;·&nbsp;
+    <a href="https://github.com/ruhullasheik" target="_blank" rel="noopener">github ↗</a>
   </footer>
 
   <script>
@@ -665,10 +857,11 @@
 
     // ── Typewriter ──────────────────────────
     const phrases = [
-      'AI Platform Engineer',
-      'Tech Lead @ Aptean',
-      'MCP Gateway Builder',
-      'Enterprise AI Advocate',
+      'Senior Software Engineer',
+      'Integration Engineer',
+      'Full Stack Developer',
+      'MCP Server Developer',
+      'Tech Lead',
     ];
     let pi = 0, ci = 0, deleting = false;
     const tw = document.getElementById('tw');
@@ -723,7 +916,7 @@
         const alpha = dist < r ? 0.12 + (1 - dist / r) * 0.45 : 0.1;
         ctx.beginPath();
         ctx.arc(d.x, d.y, 1.1, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(129,140,248,${alpha})`;
+        ctx.fillStyle = `rgba(245,158,11,${alpha})`;
         ctx.fill();
       }
       requestAnimationFrame(draw);
@@ -736,7 +929,7 @@
     const wx = wc.getContext('2d');
 
     function resizeWalk() {
-      wc.width = wc.offsetWidth * window.devicePixelRatio;
+      wc.width = window.innerWidth * window.devicePixelRatio;
       wc.height = 160 * window.devicePixelRatio;
       wx.scale(window.devicePixelRatio, window.devicePixelRatio);
     }
@@ -744,7 +937,7 @@
     window.addEventListener('resize', () => { resizeWalk(); }, { passive: true });
 
     const fig = { x: -80, dir: 1, speed: 1.4, frame: 0 };
-    const W = () => wc.offsetWidth;
+    const W = () => window.innerWidth;
     const particles = [];
 
     function spawnParticle() {
@@ -772,24 +965,18 @@
 
       wx.lineWidth = 2.5; wx.lineCap = 'round'; wx.lineJoin = 'round';
 
-      // Head
-      wx.strokeStyle = '#818cf8';
+      wx.strokeStyle = '#f59e0b';
       wx.beginPath(); wx.arc(x, hy, 12, 0, Math.PI * 2); wx.stroke();
-      // Eyes
-      wx.fillStyle = '#818cf8';
+      wx.fillStyle = '#f59e0b';
       wx.beginPath(); wx.arc(x - 4, hy - 2, 2, 0, Math.PI * 2); wx.fill();
       wx.beginPath(); wx.arc(x + 4, hy - 2, 2, 0, Math.PI * 2); wx.fill();
-      // Smile
       wx.beginPath(); wx.arc(x, hy + 3, 5, 0.2, Math.PI - 0.2); wx.stroke();
 
-      // Body
       wx.beginPath(); wx.moveTo(x, hy + 12); wx.lineTo(x, y - 28); wx.stroke();
 
-      // Right arm → coffee
       const cx = x + 24 + arm * 0.2, cy = hy + 22;
       wx.beginPath(); wx.moveTo(x, hy + 18); wx.lineTo(cx, cy); wx.stroke();
 
-      // Coffee cup
       wx.strokeStyle = '#fbbf24'; wx.fillStyle = 'rgba(251,191,36,0.13)';
       wx.lineWidth = 2;
       wx.beginPath();
@@ -798,7 +985,6 @@
       wx.closePath(); wx.fill(); wx.stroke();
       wx.beginPath(); wx.arc(cx + 9, cy - 2, 4, -Math.PI / 2, Math.PI / 2); wx.stroke();
 
-      // Steam
       for (let s = 0; s < 3; s++) {
         const sp = ((frame * 0.07) + s * 0.34) % 1;
         const sx = cx + s * 4 - 4, sy = cy - 8 - sp * 16;
@@ -811,36 +997,32 @@
         wx.stroke();
       }
 
-      // Left arm
-      wx.strokeStyle = '#818cf8'; wx.lineWidth = 2.5;
+      wx.strokeStyle = '#f59e0b'; wx.lineWidth = 2.5;
       wx.beginPath();
       wx.moveTo(x, hy + 18);
       wx.lineTo(x - 20 - arm * 0.5, hy + 34 + arm * 0.3);
       wx.stroke();
 
-      // Legs
       wx.beginPath(); wx.moveTo(x, y - 28); wx.lineTo(x + leg * 0.8, y - 10); wx.lineTo(x + leg, y); wx.stroke();
       wx.beginPath(); wx.moveTo(x, y - 28); wx.lineTo(x - leg * 0.8, y - 10); wx.lineTo(x - leg, y); wx.stroke();
 
-      // Thought bubble (occasional AI processing)
       if (Math.floor(frame / 60) % 2 === 0) {
         const thoughts = ['training...', 'optimizing...', 'need coffee', 'deploying...', 'thinking...'];
         const msg = thoughts[Math.floor(frame / 120) % thoughts.length];
-        wx.fillStyle = 'rgba(129,140,248,0.08)';
-        wx.strokeStyle = 'rgba(129,140,248,0.25)';
+        wx.fillStyle = 'rgba(245,158,11,0.08)';
+        wx.strokeStyle = 'rgba(245,158,11,0.3)';
         wx.lineWidth = 1;
         const bw = msg.length * 7 + 16, bh = 22, bx = x + 10, by = hy - 44;
         wx.beginPath();
         wx.roundRect(bx, by, bw, bh, 6);
         wx.fill(); wx.stroke();
-        wx.fillStyle = 'rgba(129,140,248,0.75)';
+        wx.fillStyle = 'rgba(245,158,11,0.85)';
         wx.font = '10px JetBrains Mono, monospace';
         wx.fillText(msg, bx + 8, by + 15);
-        // Bubble tail dots
         for (let d = 0; d < 3; d++) {
           wx.beginPath();
           wx.arc(bx - 3 - d * 5, by + bh - d * 2, 2 - d * 0.4, 0, Math.PI * 2);
-          wx.fillStyle = 'rgba(129,140,248,0.2)';
+          wx.fillStyle = 'rgba(245,158,11,0.2)';
           wx.fill();
         }
       }
@@ -850,17 +1032,11 @@
 
     function animWalk() {
       wx.clearRect(0, 0, W(), 160);
-
-      // Move figure
       fig.x += fig.speed * fig.dir;
       fig.frame++;
       if (fig.x > W() + 80) fig.dir = -1;
       if (fig.x < -80)       fig.dir =  1;
-
-      // Spawn data particles
       if (fig.frame % 10 === 0) spawnParticle();
-
-      // Draw data trail
       for (let i = particles.length - 1; i >= 0; i--) {
         const p = particles[i];
         p.x += p.vx; p.y += p.vy; p.life -= 0.014;
@@ -869,12 +1045,9 @@
         wx.fillStyle = `rgba(129,140,248,${p.life * 0.65})`;
         wx.fillText(p.ch, p.x, p.y);
       }
-
-      // Ground line
       wx.strokeStyle = 'rgba(255,255,255,0.04)';
       wx.lineWidth = 1;
       wx.beginPath(); wx.moveTo(0, 140); wx.lineTo(W(), 140); wx.stroke();
-
       drawFig(fig.x, 138, fig.frame, fig.dir);
       requestAnimationFrame(animWalk);
     }
