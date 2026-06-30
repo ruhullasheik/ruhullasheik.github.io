@@ -5,8 +5,11 @@ from pathlib import Path
 import markdown
 from playwright.sync_api import sync_playwright
 
-MD_PATH = Path("sources/Ruhulla_Sheik_Resume.md")
-PDF_PATH = Path("downloads/Ruhulla_Sheik_Resume.pdf")
+# Anchor paths to the repo root (this file lives in scripts/) so the script
+# works regardless of the current working directory.
+ROOT = Path(__file__).resolve().parent.parent
+MD_PATH = ROOT / "sources/Ruhulla_Sheik_Resume.md"
+PDF_PATH = ROOT / "downloads/Ruhulla_Sheik_Resume.pdf"
 
 CSS_STYLES = """
 * { box-sizing: border-box; margin: 0; padding: 0; }
