@@ -23,9 +23,9 @@ Engineer who takes initiative, steps up to lead, and picks up new technology fas
 
 ## Professional Experience
 
-### Aptean *(formerly Logility Solutions, formerly AdapChain Solutions)* — Bangalore, India | March 2014 – Present
+### Aptean *(formerly Logility Solutions, formerly AdapChain Solutions)* — Bangalore, India | Mar 2014 – Present
 
-#### Senior Software Engineer — Platform AI Enablement · March 2024 – Present
+#### Senior Software Engineer — Platform AI Enablement · Mar 2024 – Present
 
 **MCP Gateway** · Jan 2026 – May 2026 · `Python` `FastMCP` `FastAPI` `PostgreSQL` `Redis` `OpenTelemetry` `AKS`
 
@@ -55,7 +55,7 @@ Engineer who takes initiative, steps up to lead, and picks up new technology fas
 - Owned the MCP Gateway Helm configuration rollout across all five environments (sbox → dev → qa → stg → prod) for the service launch.
 - Designed the **tenant services registry** — a platform-wide single source of truth for tenant backend URLs, consumed at runtime by both Client Catalog and the MCP Gateway, replacing ad-hoc URL hardcoding.
 
-#### Software Developer — R&D Platform Engineering (Logility Solutions) · September 2020 – February 2024
+#### Software Developer — R&D Platform Engineering (Logility Solutions) · Sep 2020 – Feb 2024
 
 **Platform Airflow / PAM** · Sep 2021 – Aug 2023 · `Python` `Apache Airflow` `Docker` `Azure Pipelines` `Azure Bicep`
 
@@ -79,7 +79,7 @@ Engineer who takes initiative, steps up to lead, and picks up new technology fas
 
 - Implemented read-only UI mode for OIDC/SAML provider forms end-to-end: Vue 3 components, validation refactor, xUnit + Vitest tests, Azure Pipelines CI, and Bicep IaC.
 
-#### Integration Engineer — ERP Data Integration (AdapChain Solutions) · March 2014 – September 2020
+#### Integration Engineer — ERP Data Integration (AdapChain Solutions) · Mar 2014 – Sep 2020
 
 - Owned complete integration projects end-to-end for enterprise customers including **SEI (7-Eleven), ATK, and VISTA** — handled direct customer communication, solution design, and delivery solo; integrated SAP HANA, Oracle EBS, and Microsoft NAV alongside daily delta file feeds into Logility's supply chain planning platform.
 - Built rules-based transformation programs and supply/demand data models for Logility Voyager covering demand planning, supply planning, replenishment, production planning, and inventory optimization.

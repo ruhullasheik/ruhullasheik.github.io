@@ -119,7 +119,7 @@ def build_pdf() -> None:
         page.pdf(
             path=str(PDF_PATH),
             format="A4",
-            margin={"top": "11mm", "bottom": "9mm", "left": "14mm", "right": "14mm"},
+            margin={"top": "11mm", "bottom": "11mm", "left": "14mm", "right": "14mm"},
             print_background=True,
         )
         browser.close()
