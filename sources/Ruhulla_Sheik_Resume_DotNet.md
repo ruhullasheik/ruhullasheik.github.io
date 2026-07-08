@@ -11,12 +11,12 @@ sk.ruhulla@gmail.com | +91 9035786999 | linkedin.com/in/ruhullasheik | github.co
 ## Technical Skills
 
 **Languages:** C#, Python, Java, TypeScript, SQL, PowerShell<br>
-**Cloud & Architecture:** Azure (AKS, Bicep, Pipelines, Service Bus, Key Vault, App Insights), Microservices, API Gateway, Event-Driven Architecture, Monolith-to-Microservices Migration<br>
+**Cloud & Architecture:** Azure (AKS, Bicep, Pipelines, Service Bus, Key Vault, App Insights, Redis Cache, Load Test, Logic Apps, ADF), Microservices, API Gateway, Event-Driven Architecture, Monolith-to-Microservices Migration<br>
 **Patterns & Practices:** SOLID, Clean Architecture, Design Patterns, REST / OpenAPI / Swagger, Domain-Driven design<br>
 **.NET Stack:** .NET Core / .NET 8–10, ASP.NET Core, Entity Framework Core, IdentityServer4, AutoMapper / Mapperly, xUnit<br>
 **AI-Augmented Engineering:** Claude Code, Spec-Driven Development, Model Context Protocol (MCP), FastMCP, Langflow, Azure OpenAI, AI guardrails<br>
 **Containers & DevOps:** Docker, Kubernetes, Helm, Azure Pipelines (CI/CD), Infrastructure-as-Code (Azure Bicep)<br>
-**Databases:** SQL Server / Azure SQL, PostgreSQL, MongoDB / Cosmos DB, Redis (distributed caching)<br>
+**Databases:** SQL Server / Azure SQL, PostgreSQL, MongoDB / Cosmos DB<br>
 **Security:** OAuth2, OpenID Connect (OIDC), JWT / JWKS, SAML 2.0, Ory Keto (ReBAC), OWASP, Bandit (SAST), pip-audit (SCA)<br>
 **Observability:** OpenTelemetry, Grafana, Loki, Azure Application Insights<br>
 **Messaging:** Apache Kafka, Azure Service Bus, RabbitMQ

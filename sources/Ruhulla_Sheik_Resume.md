@@ -13,8 +13,8 @@ Engineer who takes initiative, steps up to lead, and picks up new technology fas
 **Languages:** C#, Python, Java, TypeScript, PowerShell, SQL<br>
 **AI & MCP:** Model Context Protocol (MCP), Langflow, Azure OpenAI, FastMCP, Claude Code, Spec-Driven Development<br>
 **Frameworks:** ASP.NET Core, FastAPI, Apache Airflow, Quarkus, Vue 3 / Vite, Entity Framework Core, IdentityServer4<br>
-**Cloud & Infra:** Azure (AKS, Bicep, Pipelines, Service Bus, Key Vault, App Insights), Docker, Kubernetes, Helm<br>
-**Databases:** PostgreSQL, SQL Server / Azure SQL, MongoDB / Cosmos DB, Redis<br>
+**Cloud & Infra:** Azure (AKS, Bicep, Pipelines, Service Bus, Key Vault, App Insights, Redis Cache, Load Test, Logic Apps, ADF), Docker, Kubernetes, Helm<br>
+**Databases:** PostgreSQL, SQL Server / Azure SQL, MongoDB / Cosmos DB<br>
 **Auth & Security:** OAuth2, OIDC, SAML 2.0, JWT / JWKS, IdentityServer4, Bandit (SAST), pip-audit (SCA), Ory Keto (Google Zanzibar)<br>
 **Observability:** OpenTelemetry, Grafana, Loki, Azure Application Insights<br>
 **Messaging:** Apache Kafka, Azure Service Bus, RabbitMQ<br>
