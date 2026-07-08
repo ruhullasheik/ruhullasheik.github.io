@@ -7,7 +7,7 @@ Aptean) to match your offer letters and payslips.
 
 ## Quick Facts
 
-Employer: Logility (American Software) — now part of Aptean
+Employer: Logility Solutions, an Aptean Company (formerly American Software)
 Total experience: 12+ years (since 2014)
 Current title: Senior Software Engineer / Tech Lead
 Location: Bangalore, India

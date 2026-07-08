@@ -1,25 +1,25 @@
 # Ruhulla Sheik
 
-**Senior Software Engineer · AI Platform Engineer · Integration Engineer**
+**Senior Software Engineer · AI Platform Engineer · Tech Lead**
 
 sk.ruhulla@gmail.com | +91 9035786999 | linkedin.com/in/ruhullasheik | github.com/ruhullasheik | Bangalore, India
 
 ## Professional Summary
 
-Engineer who takes initiative, steps up to lead, and picks up new technology fast. **12+ years at a single company across three acquisitions** — progressing from Integration Engineer owning full customer-facing ERP projects solo, to Software Developer building core platform products, to Senior Engineer architecting production AI infrastructure. Most recently built a production **MCP (Model Context Protocol) AI gateway serving 20,000+ API calls/day** and shipped a conversational AI agent using Langflow and Azure OpenAI. Equally comfortable deep in code or leading a team — depending on what the project needs.
+Senior software and platform engineer with **12+ years at a single enterprise SaaS company through three acquisitions**, spanning ERP integration, multi-tenant cloud platform engineering, and production AI infrastructure. Architected and shipped a **Model Context Protocol (MCP) AI gateway serving 20,000+ API calls/day** on a multi-tenant Azure (AKS) platform, and shipped a conversational AI agent on Langflow + Azure OpenAI. **Tech Lead and sole mandatory PR reviewer for 8 engineers**, enforcing 90%+ test coverage and OpenTelemetry-based observability. Deep in Python, C#, Azure, Kubernetes, authorization systems, and CI/CD — equally effective hands-on in code or leading a team, depending on what the project needs.
 
 ## Technical Skills
 
-**Languages:** C#, Python, Java, TypeScript, PowerShell, SQL<br>
-**AI & MCP:** Model Context Protocol (MCP), Langflow, Azure OpenAI, FastMCP, Claude Code, Spec-Driven Development<br>
-**Frameworks:** ASP.NET Core, FastAPI, Apache Airflow, Quarkus, Vue 3 / Vite, Entity Framework Core, IdentityServer4<br>
-**Cloud & Infra:** Azure (AKS, Bicep, Pipelines, Service Bus, Key Vault, App Insights), Docker, Kubernetes, Helm<br>
-**Databases:** PostgreSQL, SQL Server / Azure SQL, MongoDB / Cosmos DB, Redis<br>
-**Auth & Security:** OAuth2, OIDC, SAML 2.0, JWT / JWKS, IdentityServer4, Bandit (SAST), pip-audit (SCA), Ory Keto (Google Zanzibar)<br>
+**Languages:** Python, C#, Java, TypeScript, SQL, PowerShell<br>
+**AI & MCP:** Model Context Protocol (MCP), FastMCP, Langflow, Azure OpenAI, Claude Code, Spec-Driven Development<br>
+**Cloud & Infra:** Azure (AKS, Bicep, Pipelines, Service Bus, Key Vault, App Insights), Kubernetes, Docker, Helm, Infrastructure-as-Code, CI/CD<br>
 **Observability:** OpenTelemetry, Grafana, Loki, Azure Application Insights<br>
+**Frameworks:** FastAPI, ASP.NET Core, Apache Airflow, Quarkus, Vue 3 / Vite, Entity Framework Core, IdentityServer4<br>
+**Databases:** PostgreSQL, SQL Server / Azure SQL, Redis, MongoDB / Cosmos DB<br>
+**Auth & Security:** OAuth2, OIDC, SAML 2.0, JWT / JWKS, Ory Keto (Google Zanzibar / ReBAC), Bandit (SAST), pip-audit (SCA)<br>
 **Messaging:** Apache Kafka, Azure Service Bus, RabbitMQ<br>
-**Testing:** pytest, xUnit, Vitest, JUnit, JMeter, FakeItEasy<br>
-**Integration & ERP Templates:** SAP (JCo, HANA), Oracle EBS, JD Edwards
+**Testing:** pytest, xUnit, Vitest, JUnit, JMeter, Ruff<br>
+**Integration & ERP:** SAP (JCo, HANA), Oracle EBS, JD Edwards, ETL / data integration
 
 ## Professional Experience
 
@@ -29,12 +29,12 @@ Engineer who takes initiative, steps up to lead, and picks up new technology fas
 
 **MCP Gateway** · Jan 2026 – May 2026 · `Python` `FastMCP` `FastAPI` `PostgreSQL` `Redis` `OpenTelemetry` `AKS`
 
-- **Architected and shipped** a production AI gateway **serving 20,000+ API calls/day** across a multi-tenant Azure platform — auto-discovers OpenAPI specs and exposes them as MCP tools. **Tech Lead**, lead contributor, and sole mandatory PR reviewer.
-- Designed **instance-aware multi-tenant URL resolution** so a single deployed gateway serves all tenants with isolated, per-tenant backend routing — eliminating per-tenant deployments. MCP tools resolve backend URLs at runtime via the Client Catalog service.
+- **Architected and shipped** a production AI gateway **serving 20,000+ API calls/day** across a multi-tenant Azure platform that auto-discovers OpenAPI specs and exposes them as MCP tools — as **Tech Lead, lead contributor, and sole mandatory PR reviewer**.
+- Designed **instance-aware multi-tenant URL resolution** so one deployed gateway serves all tenants with isolated per-tenant backend routing, **eliminating per-tenant deployments**; MCP tools resolve backend URLs at runtime via the Client Catalog service.
 - Built the full identity plumbing: **IAM-to-IDG token translation**, a distributed Redis token cache with hybrid local/Redis fallback, and COID-scoped cache keys enforcing tenant isolation at the caching layer.
 - Owned end-to-end delivery of the **Logility Atlas Catalog Discovery Agent** — a Langflow + Azure OpenAI conversational agent for natural-language MCP tool discovery; authored the spec, built the MCP server, configured the agent, and wired full gateway routing.
 - **Remediated 6+ CVEs** by integrating Bandit (SAST) + pip-audit (SCA) as a CI/CD pre-build gate that blocks Docker image creation on any high/medium-severity finding.
-- Enforced **90%+ test coverage** and Ruff linting across 8 contributors as mandatory PR reviewer; owned the full release pipeline (sbox → dev → qa → stg → prod).
+- Enforced **90%+ test coverage** and Ruff linting across **8 contributors** as mandatory PR reviewer; owned the full release pipeline (sbox → dev → qa → stg → prod).
 
 **Platform Entitlements** · Aug 2024 – Aug 2025 · `C#` `Vue 3` `ASP.NET Core` `Ory Keto` `Kafka` `PostgreSQL` `MongoDB` `AKS`
 
@@ -52,14 +52,14 @@ Engineer who takes initiative, steps up to lead, and picks up new technology fas
 
 **Infrastructure.Cloud.Params** · Aug 2024 – May 2026 · `Azure Bicep` `Helm` `Azure Pipelines` `PowerShell`
 
-- Owned the MCP Gateway Helm configuration rollout across all five environments (sbox → dev → qa → stg → prod) for the service launch.
+- Owned the MCP Gateway Helm configuration rollout across **all five environments** (sbox → dev → qa → stg → prod) for the service launch.
 - Designed the **tenant services registry** — a platform-wide single source of truth for tenant backend URLs, consumed at runtime by both Client Catalog and the MCP Gateway, replacing ad-hoc URL hardcoding.
 
 #### Software Developer — R&D Platform Engineering (Logility Solutions) · Sep 2020 – Feb 2024
 
 **Platform Airflow / PAM** · Sep 2021 – Aug 2023 · `Python` `Apache Airflow` `Docker` `Azure Pipelines` `Azure Bicep`
 
-- **Primary owner (162 of ~205 commits — 79%)** of Logility's Apache Airflow deployment; drove three consecutive version upgrades (2.2.4 → 2.3.3 → 2.4.3 → 2.6.1).
+- **Primary owner (162 of ~205 commits — 79%)** of Logility's Apache Airflow deployment; drove **three consecutive version upgrades** (2.2.4 → 2.3.3 → 2.4.3 → 2.6.1).
 - Integrated IDG OAuth2/OIDC SSO; built Azure Pipelines CI/CD and Azure Bicep IaC from scratch; added an Azure Service Bus provider for platform event publishing.
 - Wrote DAGs for data processing, alerting, and scheduled jobs across the platform.
 
@@ -71,7 +71,7 @@ Engineer who takes initiative, steps up to lead, and picks up new technology fas
 
 **AdapLink Templates** · Sep 2020 – Aug 2023 · `Python` `XML` `PowerShell` `Azure Pipelines`
 
-- **2nd highest contributor** building configuration-as-code ERP integration templates for supply chain customers (SAP, Oracle, JDE).
+- **2nd highest contributor** building configuration-as-code ERP integration templates for supply-chain customers (SAP, Oracle, JDE).
 - Built the IBP-ATP/CTP integration template with batch-wise processing for high-volume order flows; created MPO and VOYAGER IO Cloud Sync templates; extended SAP/HANA templates with ObjectStore and VBFA support.
 - Created Azure Pipelines CI/CD from scratch with versioned artifact generation; introduced pytest and wrote the project's **first automated test suite**.
 
@@ -81,7 +81,7 @@ Engineer who takes initiative, steps up to lead, and picks up new technology fas
 
 #### Integration Engineer — ERP Data Integration (AdapChain Solutions) · Mar 2014 – Sep 2020
 
-- Owned complete integration projects end-to-end for enterprise customers including **SEI (7-Eleven), ATK, and VISTA** — handled direct customer communication, solution design, and delivery solo; integrated SAP HANA, Oracle EBS, and Microsoft NAV alongside daily delta file feeds into Logility's supply chain planning platform.
+- Owned complete integration projects end-to-end for enterprise customers including **SEI (7-Eleven), ATK, and VISTA** — handled direct customer communication, solution design, and delivery solo; integrated SAP HANA, Oracle EBS, and Microsoft NAV alongside daily delta file feeds into Logility's supply-chain planning platform.
 - Built rules-based transformation programs and supply/demand data models for Logility Voyager covering demand planning, supply planning, replenishment, production planning, and inventory optimization.
 - Designed standard integration templates for SAP, Oracle, and JDE ERP systems deployed across multiple customer engagements.
 - Served as **Release Master** — coordinating regression tests, documentation, and versioned releases; handled Change Control board responsibilities and post-implementation customer support.
