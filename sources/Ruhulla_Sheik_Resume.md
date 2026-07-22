@@ -11,7 +11,7 @@ Engineer who takes initiative, steps up to lead, and picks up new technology fas
 ## Technical Skills
 
 **Languages:** C#, Python, Java, TypeScript, PowerShell, SQL<br>
-**AI & MCP:** Model Context Protocol (MCP), Langflow, Azure OpenAI, FastMCP, Claude Code, Spec-Driven Development<br>
+**AI & MCP:** Model Context Protocol (MCP), Langflow, Azure OpenAI, FastMCP, Claude Code, Spec-Driven Development, RAG (Retrieval-Augmented Generation), Vector Databases (ChromaDB), Embeddings, Google Gemini API<br>
 **Frameworks:** ASP.NET Core, FastAPI, Apache Airflow, Quarkus, Vue 3 / Vite, Entity Framework Core, IdentityServer4<br>
 **Cloud & Infra:** Azure (AKS, Bicep, Pipelines, Service Bus, Key Vault, App Insights, Redis Cache, Load Test, Logic Apps, ADF), Docker, Kubernetes, Helm<br>
 **Databases:** PostgreSQL, SQL Server / Azure SQL, MongoDB / Cosmos DB<br>
